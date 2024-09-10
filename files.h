@@ -22,7 +22,7 @@ void ler_cabecalho(FILE *fp, Cabecalho *cabecalho);
 void ler_imagem(FILE *fp, int nlin, int ncol, Imagem img);
 void gravar_cabecalho(FILE *fpNewImage, Cabecalho cabecalho);
 void gravar_imagem(FILE *fpNewImage, Imagem imgIn, int nlin, int ncol);
-void gerar_imagem_intermediaria(Imagem imgIni, Imagem imgFin, Cabecalho cabecalho, double t, int *index); 
+void gerar_imagens_intermediarias(Imagem imgIni, Imagem imgFin, Cabecalho cabecalho, int *index); 
 void salvar_imagem_intermediaria(Imagem intermediaria, Cabecalho cabecalho, int index);  
 
 Imagem alocar_matriz_Imagem(int nlin, int ncol);

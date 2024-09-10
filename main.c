@@ -9,6 +9,12 @@ int main(int argc, char *argv[])
     Imagem imgIni, imgFin;
     int index = 0;
 
+    if (argc <= 2)
+    {
+        printf("Formato correto de entrada: <programa> <imagem_entrada> <imagem_saida>\n");
+        exit(1);
+    }
+
     abrir_arquivos(argv[1], argv[2], &fpImgIni, &fpImgFin);
     ler_cabecalho(fpImgIni, &c1);
     ler_cabecalho(fpImgFin, &c2); 
@@ -22,10 +28,7 @@ int main(int argc, char *argv[])
     fclose(fpImgIni);
     fclose(fpImgFin);
 
-    for (double t = 0.0; t <= 1; t+=0.05)
-    {
-        gerar_imagem_intermediaria(imgIni, imgFin, c1, t, &index);
-    }    
+    gerar_imagens_intermediarias(imgIni, imgFin, c1, &index);
 
     return 0;
 }

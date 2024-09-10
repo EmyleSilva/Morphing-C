@@ -69,21 +69,24 @@ void gravar_imagem(FILE *fpNewImage, Imagem imgIn, int nlin, int ncol)
     }
 }
 
-void gerar_imagem_intermediaria(Imagem imgIni, Imagem imgFin, Cabecalho cabecalho, double t, int *index)
+void gerar_imagens_intermediarias(Imagem imgIni, Imagem imgFin, Cabecalho cabecalho, int *index)
 {
     Imagem newImage = alocar_matriz_Imagem(cabecalho.nlin, cabecalho.ncol);
 
-    for (int lin = 0; lin < cabecalho.nlin; lin++)
+    for (double t = 0.0; t <= 1; t+=0.05)
     {
-        for (int col = 0; col < cabecalho.ncol; col++)
+        for (int lin = 0; lin < cabecalho.nlin; lin++)
         {
-            newImage[lin][col].red = ((1 - t)*imgIni[lin][col].red + t*imgFin[lin][col].red);
-            newImage[lin][col].green = ((1 - t)*imgIni[lin][col].green + t*imgFin[lin][col].green);
-            newImage[lin][col].blue = ((1 - t)*imgIni[lin][col].blue + t*imgFin[lin][col].blue);
+            for (int col = 0; col < cabecalho.ncol; col++)
+            {
+                newImage[lin][col].red = ((1 - t)*imgIni[lin][col].red + t*imgFin[lin][col].red);
+                newImage[lin][col].green = ((1 - t)*imgIni[lin][col].green + t*imgFin[lin][col].green);
+                newImage[lin][col].blue = ((1 - t)*imgIni[lin][col].blue + t*imgFin[lin][col].blue);
+            }
         }
-    }
 
-    salvar_imagem_intermediaria(newImage, cabecalho, ++(*index));
+        salvar_imagem_intermediaria(newImage, cabecalho, ++(*index));
+    }
 
     for (int lin = 0; lin < cabecalho.nlin; lin++) {
         free(newImage[lin]);
