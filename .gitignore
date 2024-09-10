@@ -9,5 +9,6 @@ main
 # Configurações do VSCode
 .vscode/
 
-# Diretório de Imagens intermediárias
+# Diretórios de imagens e gifs
 imagens/
+gifs/
