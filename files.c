@@ -73,7 +73,7 @@ void gerar_imagens_intermediarias(Imagem imgIni, Imagem imgFin, Cabecalho cabeca
 {
     Imagem newImage = alocar_matriz_Imagem(cabecalho.nlin, cabecalho.ncol);
 
-    for (double t = 0.0; t <= 1; t+=0.05)
+    for (double t = 0.0; t <= 1; t+=0.01)
     {
         for (int lin = 0; lin < cabecalho.nlin; lin++)
         {

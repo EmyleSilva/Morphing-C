@@ -6,7 +6,8 @@ struct files{
     int green;
     int blue;
 };
-typedef struct files **Imagem;
+typedef struct files **Imagem
+;
 typedef struct files *ImgagemP;
 typedef struct files ImagemF;
 
