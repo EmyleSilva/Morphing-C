@@ -22,7 +22,7 @@ FILE* criar_arquivo(char* newImage)
     FILE *fp;
     if((fp=fopen(newImage, "w"))==NULL)
     {
-        printf("Erro ao gerar imagem intermediária.\n");
+        printf("Erro ao gerar imagem intermediaria.\n");
         exit(1);
     }
     return fp;
