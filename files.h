@@ -1,6 +1,8 @@
 #ifndef FILES_H_INCLUDED
 #define FILES_H_INCLUDED
 
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * @brief Estrutura que representa um pixel
  */

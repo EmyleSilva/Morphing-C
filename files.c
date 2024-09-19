@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "files.h"
 
 void abrir_arquivos(char* img1, char* img2, FILE **fpImgIni, FILE **fpImgFin)
@@ -73,7 +70,7 @@ void gerar_imagens_intermediarias(Imagem imgIni, Imagem imgFin, Cabecalho cabeca
 {
     Imagem newImage = alocar_matriz_Imagem(cabecalho.nlin, cabecalho.ncol);
 
-    for (double t = 0.0; t <= 1; t+=0.01)
+    for (double t = 0.0; t < 1.01; t+=0.05)
     {
         for (int lin = 0; lin < cabecalho.nlin; lin++)
         {
@@ -99,7 +96,7 @@ void salvar_imagem_intermediaria(Imagem intermediaria, Cabecalho cabecalho, int 
     FILE *fp;
     char imageIndex[10], fileName[30];
     sprintf(imageIndex, "%d", index);
-    sprintf(fileName, "imagens/%s.ppm", imageIndex);
+    sprintf(fileName, "%s.ppm", imageIndex);
 
     fp = criar_arquivo(fileName);
     gravar_cabecalho(fp, cabecalho);
