@@ -13,3 +13,7 @@ main
 imagens/
 imagens2/
 gifs/
+imagens-entrada/
+
+#Imagens 
+.ppm
