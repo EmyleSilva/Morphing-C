@@ -15,14 +15,6 @@ struct pixels{
  * @brief Definição de tipo de um ponteiro para ponteira da estrutura pixels 
  */
 typedef struct pixels **Imagem;
-/**
- * @brief Definição de tipo de um ponteiro para estrutura de pixels
- */
-typedef struct pixels *ImgagemP;
-/**
- * @brief Definição de tipo para a estrutura de pixels
- */
-typedef struct pixels ImagemF;
 
 /**
  * @brief Definição de tipo para cabeçalho
@@ -88,7 +80,7 @@ void gravar_cabecalho(FILE *fpNewImage, Cabecalho cabecalho);
 void gravar_imagem(FILE *fpNewImage, Imagem imgIn, int nlin, int ncol);
 
 /**
- * @brief Função que gera as imagens (pixels) das imagens intermediárias
+ * @brief Função que gera os pixels das imagens intermediárias
  * 
  * Os pixels das imagens intermediárias são criados sempre que o for mais externo
  * varia; ele inicia em 0 e vai até 1, com incremento de 0.01 a cada volta, gerando no fim

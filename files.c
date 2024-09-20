@@ -106,10 +106,10 @@ void salvar_imagem_intermediaria(Imagem intermediaria, Cabecalho cabecalho, int 
 
 Imagem alocar_matriz_Imagem(int nlin, int ncol)
 {
-    Imagem newImage = (Imagem)malloc((nlin + 1) * sizeof(ImgagemP));
+    Imagem newImage = (Imagem)malloc((nlin + 1) * sizeof(struct pixels*));
     for (int col = 0; col < nlin; col++)
     {
-        newImage[col] = (ImgagemP)malloc((ncol+1)*sizeof(ImagemF));
+        newImage[col] = (struct pixels*)malloc((ncol+1)*sizeof(struct pixels));
         if(newImage[col] == NULL)
         {
             printf("Erro ao alocar nova Imagem.\n");
